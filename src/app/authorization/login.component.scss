@@ -1,0 +1,14 @@
+:host {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  text-align: center;
+  padding: 20px;
+}
+
+.button-action {
+  margin: auto;
+  width: 200px;
+}

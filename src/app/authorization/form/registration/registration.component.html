@@ -1,0 +1,71 @@
+<form class="form" *rxIf="form(); let form" [formGroup]="form">
+  <h2>Регистрация</h2>
+  <mat-form-field class="form-field">
+    <mat-label>Введите логин</mat-label>
+    <input
+      matInput
+      formControlName="login"
+
+    >
+    <button
+      *ngIf="login?.value"
+      (click)="flush(login)"
+      mat-icon-button
+      matSuffix
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-error *ngIf="hasError(login, 'required')"> Поле обязательно для заполнения </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <mat-label>Введите пароль</mat-label>
+    <input
+      matInput
+      [type]="hidePassword ? 'password' : 'text'"
+      formControlName="password"
+    >
+    <button
+      *ngIf="password?.value"
+      (click)="hidePassword = !hidePassword"
+      mat-icon-button
+      matSuffix
+    >
+      <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+    </button>
+    <button
+      *ngIf="password?.value"
+      (click)="flush(password)"
+      mat-icon-button
+      matSuffix
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-error *ngIf="hasError(password, 'required')"> Поле обязательно для заполнения </mat-error>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <mat-label>Введите пароль повторно</mat-label>
+    <input
+      matInput
+      [type]="hidePasswordConfirm ? 'password' : 'text'"
+      formControlName="passwordConfirm"
+    >
+    <button
+      *ngIf="passwordConfirm?.value"
+      (click)="hidePasswordConfirm = !hidePasswordConfirm"
+      mat-icon-button
+      matSuffix
+    >
+      <mat-icon>{{ hidePasswordConfirm ? 'visibility_off' : 'visibility' }}</mat-icon>
+    </button>
+    <button
+      *ngIf="passwordConfirm?.value"
+      (click)="flush(passwordConfirm)"
+      mat-icon-button
+      matSuffix
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-error *ngIf="hasError(passwordConfirm, 'required')"> Поле обязательно для заполнения </mat-error>
+  </mat-form-field>
+  <mat-error *ngIf="!matchPasswords"> Пароли не совпадают </mat-error>
+</form>
