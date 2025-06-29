@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import {LoginComponent} from './authorization/login.component';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import {LoginComponent} from './authorization/login.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
-    LoginComponent,
+    RouterOutlet,
   ]
 })
 export class AppComponent{

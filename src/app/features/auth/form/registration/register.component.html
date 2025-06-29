@@ -66,6 +66,6 @@
       <mat-icon>close</mat-icon>
     </button>
     <mat-error *ngIf="hasError(passwordConfirm, 'required')"> Поле обязательно для заполнения </mat-error>
+    <mat-error *ngIf="hasError(passwordConfirm, 'mismatch')"> Пароли не совпадают </mat-error>
   </mat-form-field>
-  <mat-error *ngIf="!matchPasswords"> Пароли не совпадают </mat-error>
 </form>

@@ -1,14 +1,12 @@
-import {ChangeDetectionStrategy, Component, effect, input, Input, OnInit, Signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, effect, input, OnInit} from '@angular/core';
 import {AbstractControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import { flush } from '../../../../../common/utility/flush.util';
-import {toSignal} from '@angular/core/rxjs-interop';
 import {MatError, MatFormField, MatInput, MatSuffix} from '@angular/material/input';
 import {MatIconButton} from '@angular/material/button';
 import {MatLabel} from '@angular/material/form-field';
 import {MatIcon} from '@angular/material/icon';
 import {NgIf} from '@angular/common';
-import {RxLet} from '@rx-angular/template/let';
 import {RxIf} from '@rx-angular/template/if';
+import { flush } from '../../../../../../common/utility/flush.util';
 
 @Component({
   standalone: true,
@@ -23,15 +21,14 @@ import {RxIf} from '@rx-angular/template/if';
     MatFormField,
     MatIcon,
     NgIf,
-    RxLet,
     RxIf,
   ],
-  selector: 'registration',
-  templateUrl: './registration.component.html',
-  styleUrl: './registration.component.scss',
+  selector: 'register',
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegistrationComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   form = input<FormGroup>();
   hidePassword = true;

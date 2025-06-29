@@ -5,10 +5,20 @@
   transform: translate(-50%, -50%);
   display: inline-block;
   text-align: center;
-  padding: 20px;
+  padding: 40px;
+  border: 1px solid;
+  border-radius: 40px;
+  background: aliceblue;
+  max-width: 450px;
+  max-height: 400px;
 }
 
 .button-action {
   margin: auto;
   width: 200px;
+}
+
+.alert {
+  min-width: 300px;
+  min-height: 100px;
 }

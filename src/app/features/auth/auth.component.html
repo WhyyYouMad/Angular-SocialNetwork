@@ -1,0 +1,29 @@
+<ng-container *ngIf="!registrationConfirm">
+  <mat-tab-group (selectedTabChange)="onTabChanges($event)" animationDuration="0ms">
+    <mat-tab
+      *ngFor="let tab of authTabs"
+      [label]="tab.description"
+    >
+      <login *ngIf="currentIndexTab === 0" [form]="form"></login>
+      <register *ngIf="currentIndexTab === 1" [form]="form"></register>
+    </mat-tab>
+  </mat-tab-group>
+
+  <button
+    mat-button
+    type="submit"
+    (click)="onAuthorization()"
+    class="button-action"
+  >
+    <p *ngIf="currentIndexTab === 0">Войти</p>
+    <p *ngIf="currentIndexTab === 1">Зарегистрироваться</p>
+  </button>
+</ng-container>
+
+<ng-container *ngIf="registrationConfirm">
+  <div class="alert">
+    <p>Регистрация прошла успешна</p>
+    <p>{{timerDisplay}}</p>
+    <button mat-button (click)="closeAlert()">Окей</button>
+  </div>
+</ng-container>
